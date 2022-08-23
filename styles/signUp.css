@@ -21,7 +21,7 @@ h1 {
     width: 10vw;
 }
 
-.sign-in {
+#sign-in {
     flex-direction: column;
     display: flex;
     justify-content: center;

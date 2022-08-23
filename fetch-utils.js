@@ -17,3 +17,18 @@ export async function signUpUser(userInfo) {
         console.error(data.message);
     }
 }
+
+export async function getUser() {
+    const res = await fetch(`${BASE_URL}/api/v1/users/me`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    });
+    if (res.ok) {
+        const user = await res.json();
+        return user;
+    }
+}

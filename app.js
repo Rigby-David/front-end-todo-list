@@ -2,6 +2,7 @@ import { signUpUser } from './fetch-utils.js';
 
 // import functions and grab DOM elements
 const signUpForm = document.getElementById('sign-up');
+const signInForm = document.getElementById('sign-in');
 // let state
 
 // set event listeners
@@ -14,6 +15,11 @@ signUpForm.addEventListener('submit', async (e) => {
         firstName: formData.get('first-name'),
         lastName: formData.get('last-name'),
     });
+});
+signInForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(signInForm);
+    // await
 });
 // get user input
 // use user input to update state
