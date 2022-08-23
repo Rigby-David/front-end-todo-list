@@ -13,7 +13,7 @@ h1 {
     justify-content: center;
 }
 
-.sign-up {
+#sign-up {
     flex-direction: column;
     display: flex;
     justify-content: center;
