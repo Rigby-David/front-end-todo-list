@@ -8,8 +8,16 @@
 </head>
 <body>
     <main>
-        <h1>hello</h1>
+        <h1>What would you like To-Do?</h1>
         <button id="logout">Logout</button>
+        <div class="todo-div">
+            <form id="todo-form">
+                <label for="description">Description</label>
+                <input type="text" name="description" placeholder="todo">
+                <button>add</button>
+            </form>
+            <ul id="todo-list"></ul>
+        </div>
     </main>
     <script type="module" src="todos.js"></script>
 </body>

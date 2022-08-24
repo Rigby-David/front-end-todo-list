@@ -71,3 +71,36 @@ export async function logoutUser() {
         location.replace('../');
     }
 }
+
+export async function addNewTodo(todoInfo) {
+    const res = await fetch(`${BASE_URL}/api/v1/todos`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todoInfo),
+        credentials: 'include',
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+        return data;
+    }
+}
+
+export async function getTodos() {
+    const res = await fetch(`${BASE_URL}/api/v1/todos`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+        return data;
+    }
+}
