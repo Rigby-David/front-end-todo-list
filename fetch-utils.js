@@ -122,8 +122,8 @@ export async function updateTodos(id, update) {
     }
 }
 
-export async function deleteTasks(id) {
-    const res = await fetch(`${BASE_URL}/api/v1/tasks/${id}`, {
+export async function deleteTodos(id) {
+    const res = await fetch(`${BASE_URL}/api/v1/todos/${id}`, {
         method: 'DELETE',
         headers: {
             Accept: 'application/json',
