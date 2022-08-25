@@ -104,3 +104,36 @@ export async function getTodos() {
         return data;
     }
 }
+
+export async function updateTodos(id, update) {
+    const res = await fetch(`${BASE_URL}/api/v1/todos/${id}`, {
+        method: 'PUT',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(update),
+        credentials: 'include',
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+        return data;
+    }
+}
+
+export async function deleteTasks(id) {
+    const res = await fetch(`${BASE_URL}/api/v1/tasks/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+        return data;
+    }
+}

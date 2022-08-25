@@ -1,4 +1,11 @@
-import { addNewTodo, checkUser, getTodos, getUser, logoutUser } from '../fetch-utils.js';
+import {
+    addNewTodo,
+    checkUser,
+    getTodos,
+    getUser,
+    logoutUser,
+    updateTodos,
+} from '../fetch-utils.js';
 import { renderTodo } from '../render-utils.js';
 checkUser();
 
@@ -8,7 +15,7 @@ const todoList = document.getElementById('todo-list');
 
 let todos = [];
 
-async function loadTodo() {
+export async function loadTodo() {
     const user = await getUser();
     if (!user) location.replace('../');
     todos = await getTodos();
@@ -23,12 +30,18 @@ function displayTodos() {
     }
 }
 
+export async function handleUpdate(id, update) {
+    await updateTodos(id, update);
+    loadTodo();
+}
+
 todoForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(todoForm);
-    await addNewTodo({
+    const newTodo = await addNewTodo({
         description: data.get('description'),
     });
+    todos.push(newTodo);
     todoForm.reset();
     loadTodo();
 });
