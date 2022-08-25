@@ -8,10 +8,8 @@ export function renderTodo(todo) {
 
     const updateButton = document.createElement('button');
     updateButton.textContent = 'update todo';
-    if (todo.complete) {
-        updateButton.classList.add('update');
-        li.classList.add('updated-todo');
-    }
+    updateButton.classList.add('update-button');
+    li.classList.add('updated-todo');
     updateButton.addEventListener('click', async (e) => {
         e.preventDefault();
         await updateTodos(todo.id, { complete: !todo.complete });
@@ -27,6 +25,8 @@ export function renderTodo(todo) {
         await deleteTodos(todo.id);
         loadTodo();
     });
+
+    // const check = document.createElement('');
     li.append(updateButton, deleteButton);
     return li;
 }

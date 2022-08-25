@@ -1,0 +1,25 @@
+/* .update-button {
+    background-color: green;
+}
+
+.update-button:visited {
+    background-color: red;
+} */
+
+.todo-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#todo-form {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+}
+
+/* #todo-list {
+    display: flex;
+    flex-direction: column;
+} */
